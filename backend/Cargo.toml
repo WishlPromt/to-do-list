@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "to-do-list-backend",
+    "to-do-list-backend-lib",
+]

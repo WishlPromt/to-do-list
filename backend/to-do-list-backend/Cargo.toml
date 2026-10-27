@@ -1,0 +1,7 @@
+[package]
+name = "to-do-list-backend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+to-do-list-backend-lib = {path="../to-do-list-backend-lib"}
