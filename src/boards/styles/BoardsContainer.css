@@ -1,0 +1,26 @@
+/*When container is empty*/
+.container_create-board--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+}
+
+.container_create-board--card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    width: auto;
+}
+
+/*Boards list*/
+.boards-container {
+    box-sizing: border-box;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+    gap: 1em;
+    align-content: start;
+}

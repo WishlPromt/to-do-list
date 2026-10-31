@@ -1,0 +1,144 @@
+.create-board-window {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 4vmin, 2rem);
+    box-sizing: border-box;
+    background: rgba(12, 14, 13, 0.62);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    animation: create-board-window_fade-in 180ms ease-out;
+}
+
+.create-board-window_form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1.8vmin, 1rem);
+    width: min(26rem, 100%);
+    padding: clamp(1.25rem, 3vmin, 2rem);
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background: linear-gradient(160deg, #3d3d3d, #2a2a2a);
+    border: 1px solid rgba(85, 205, 111, 0.35);
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.4),
+        0 10px 24px rgba(0, 0, 0, 0.45),
+        0 24px 56px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(38, 175, 96, 0.14);
+    animation: create-board-window_pop-in 220ms cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+
+.create-board-window_label {
+    font-size: clamp(0.75rem, 1.6vmin, 0.9rem);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.create-board-window_input {
+    width: 100%;
+    padding: 0.7em 0.9em;
+    box-sizing: border-box;
+    font: inherit;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.6rem;
+    outline: none;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.create-board-window_input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.create-board-window_input:focus {
+    border-color: #55cd6f;
+    box-shadow: 0 0 0 3px rgba(85, 205, 111, 0.22);
+}
+
+.create-board-window_actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.25rem;
+}
+
+.create-board-window_cancel,
+.create-board-window_accept {
+    padding: 0.55em 1.4em;
+    font: inherit;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: box-shadow 200ms ease, transform 200ms ease, background 200ms ease;
+}
+
+.create-board-window_cancel {
+    color: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.create-board-window_cancel:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.create-board-window_accept {
+    color: #000000;
+    background: linear-gradient(225deg, #55cd6f, #26af60);
+    box-shadow:
+        0 0 0 1px rgba(85, 205, 111, 0.25),
+        0 2px 6px rgba(0, 0, 0, 0.18),
+        0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.create-board-window_accept:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow:
+        0 0 0 1px rgba(85, 205, 111, 0.35),
+        0 4px 10px rgba(0, 0, 0, 0.2),
+        0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.create-board-window_accept:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+    box-shadow: none;
+    transform: none;
+}
+
+@keyframes create-board-window_fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes create-board-window_pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .create-board-window,
+    .create-board-window_form {
+        animation: none;
+    }
+}

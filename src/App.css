@@ -1,27 +1,54 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background: linear-gradient(225deg, #585858, #333333);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  font-size: calc(8px + 1vmin);
+  color: white;
+}
+
+.App-header {
+  background: linear-gradient(to right, #26AF60, #55CD6F);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: left;
+  gap: clamp(0.5rem, 2vmin, 1.5rem);
+  width: 100%;
+  padding: clamp(0.5rem, 2vmin, 1.5rem);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 6px 12px rgba(0, 0, 0, 0.16),
+    0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.App-logo_container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.logo {
+  display: block;
+  width: clamp(40px, 15vmin, 120px);
+  height: auto;
+  pointer-events: none;
+}
+
+.App-name {
+  margin: 0;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: clamp(1.1rem, 5vmin, 3rem);
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
 .App-link {
