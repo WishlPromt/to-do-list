@@ -1,1 +1,1 @@
-{"login":"test","password":"qwerty","boards":[]}
+{"login":"test","password":"qwerty","boards":[{"name":"Test1","tasks":[]},{"name":"Test2","tasks":[]}]}
