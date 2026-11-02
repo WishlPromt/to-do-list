@@ -1,3 +1,4 @@
+pub mod board;
 pub mod task;
 
 #[cfg(test)]
