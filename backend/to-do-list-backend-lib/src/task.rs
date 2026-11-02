@@ -1,6 +1,8 @@
+use serde::{Deserialize, Serialize};
+
 use crate::task::TaskType::{Progressive, Switch};
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Task {
     pub name: String,
     pub text: String,
@@ -56,7 +58,7 @@ impl Task {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize, Deserialize)]
 pub enum TaskType {
     Switch(bool),        // status
     Progressive(u8, u8), // max, status

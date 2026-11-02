@@ -1,7 +1,9 @@
 use anyhow::{Result, bail};
+use serde::{Deserialize, Serialize};
 
 use crate::task::Task;
 
+#[derive(Debug, Serialize, Deserialize)]
 pub struct Board {
     pub name: String,
     pub tasks: Vec<Task>,

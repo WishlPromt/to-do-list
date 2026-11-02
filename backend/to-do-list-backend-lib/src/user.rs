@@ -1,7 +1,9 @@
 use anyhow::Result;
+use serde::{Deserialize, Serialize};
 
 use crate::board::Board;
 
+#[derive(Debug, Serialize, Deserialize)]
 pub struct User {
     pub login: String,
     pub password: String,
